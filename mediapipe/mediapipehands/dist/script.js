@@ -1,8 +1,11 @@
 import DeviceDetector from "https://cdn.skypack.dev/device-detector-js@2.2.10";
+
 const mpHands = window;
 const drawingUtils = window;
+
 const controls = window;
 const controls3d = window;
+
 // Usage: testSupport({client?: string, os?: string}[])
 // Client and os are regular expressions.
 // See: https://cdn.jsdelivr.net/npm/device-detector-js@2.2.10/README.md for
@@ -10,6 +13,7 @@ const controls3d = window;
 testSupport([
     { client: 'Chrome' },
 ]);
+
 function testSupport(supportedDevices) {
     const deviceDetector = new DeviceDetector();
     const detectedDevice = deviceDetector.parse(navigator.userAgent);
@@ -71,13 +75,16 @@ function onResults(results) {
     // Draw the overlays.
     canvasCtx.save();
     canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
-    canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height);
+    //canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height);
     if (results.multiHandLandmarks && results.multiHandedness) {
         for (let index = 0; index < results.multiHandLandmarks.length; index++) {
             const classification = results.multiHandedness[index];
             const isRightHand = classification.label === 'Right';
             const landmarks = results.multiHandLandmarks[index];
-            drawingUtils.drawConnectors(canvasCtx, landmarks, mpHands.HAND_CONNECTIONS, { color: isRightHand ? '#00FF00' : '#FF0000' });
+            //drawingUtils.drawConnectors(canvasCtx, landmarks, mpHands.HAND_CONNECTIONS, { color: isRightHand ? '#00FF00' : '#FF0000' });
+           //console.log(landmarks[0]);
+           zeigefinger = landmarks[8];
+           daumen = landmarks[4];
             drawingUtils.drawLandmarks(canvasCtx, landmarks, {
                 color: isRightHand ? '#00FF00' : '#FF0000',
                 fillColor: isRightHand ? '#FF0000' : '#00FF00',
