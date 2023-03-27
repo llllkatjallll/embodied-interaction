@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - MediaPipe - Hands</title>
+    <meta charset="utf-8">
+  <link rel="icon" href="favicon.ico">
+  <!-- p5 -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> 
+ <script src="http://127.0.0.1:8081/socket.io/socket.io.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils_3d@0.3/control_utils_3d.css" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.6/control_utils.css" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="demo.css" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.6/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils_3d@0.3/control_utils_3d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4/hands.js" crossorigin="anonymous"></script>
+
+    <!-- p5 -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> 
+
+
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<!-- partial:index.partial.html -->
+<body>
+
+  <div class="container">
+     <video class="input_video" style="display:none"></video> 
+    <canvas class="output_canvas" width="1280px" height="720px" ></canvas>
+    <div class="loading">
+      <div class="spinner"></div>
+      <div class="message">
+        Loading
+      </div>
+    </div>
+    <!-- <a class="abs logo" href="http://www.mediapipe.dev" target="_blank">
+      <div style="display: flex;align-items: center;bottom: 0;right: 10px;">
+        <img class="logo" src="logo_white.png" alt="" style="
+          height: 50px;">
+        <span class="title">MediaPipe</span>
+      </div>
+    </a> -->
+    <!-- <div class="shoutout">
+      <div>
+        <a href="https://solutions.mediapipe.dev/pose">
+          Click here for more info
+        </a>
+      </div>
+    </div> 
+  </div> -->
+  <div class="control-panel">
+  </div>
+   <div class='square-box'>
+    <div class="landmark-grid-container">
+    </div>
+
+   
+  </div> 
+  </div>
+  <div id="p5sketch"></div> 
+<!-- partial -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
+
+<script>
+   
+   
+
+    
+</script>
+
+<script>
+  let zeigefinger = [555,6];
+  let daumen = [555,6];
+ // let neigung;
+
+ let neigung;
+   var socket = io('http://127.0.0.1:8081');
+   socket.on('connect', function() {
+        // sends to socket.io server the host/port of oscServer
+        // and oscClient
+        socket.emit('config',
+            {
+                server: {
+                    port: 5500,
+                    host: '127.0.0.1'
+                },
+                client: {
+                    port: 3334,
+                    host: '127.0.0.1'
+                }
+            }
+        );
+    });
+
+    socket.on('message', function(obj) {
+        var status = document.getElementById("status");
+        if(obj[0]=="/multisense/orientation/yaw"){
+            status.innerHTML = obj[1];
+            neigung = obj[1];
+           
+        } else{
+            console.log(obj[0]);
+        }
+        
+        
+    });
+</script>
+  <script type="module" src="./script.js"></script>
+ 
+  <!-- <script type="module" src="osc/node_modules/node-osc/examples/client.js"></script>
+  <script type="module" src="osc/node_modules/node-osc/examples/server.js"></script> -->
+  <script type="module" src="./hand-points.js"></script>
+  <!-- <script  src="./second.js"></script> -->
+  
+
+</body>
+</html>

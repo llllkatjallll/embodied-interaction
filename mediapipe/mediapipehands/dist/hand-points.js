@@ -32,7 +32,8 @@ let sketch = function (p) {
     p.background(50, 50, 50);
     p.drawGrid();
     //p.objectBetweenFingers();
-    p.pinchObject();
+    //p.pinchObject();
+    p.objektNeigen();
   }
 
   p.mousePressed = function () {
@@ -66,7 +67,19 @@ let sketch = function (p) {
     return(easedPosition2);
   }
  
+ 
 
+  p.objektNeigen = function () {
+    console.log(neigung);
+    p.rectMode(p.CENTER);
+    p.push();
+    p.translate(width / 2, height / 2);
+    p.rotate(p.radians(-neigung+0));
+    
+    p.rect(0, 0, 300,500,80);
+    p.pop();
+
+  }
   p.pinchObject = function () {
 
     //objekt das man greift
