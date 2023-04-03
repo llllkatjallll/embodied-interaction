@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OSC Message Display</title>
+  <script src="https://cdn.socket.io/4.5.1/socket.io.min.js"></script>
+  <script>
+    // Connect to the Socket.io server
+    const socket = io('http://localhost:5500', { transports: ['websocket'] });
+
+    // Handle incoming OSC messages
+    socket.on('osc', function(oscMsg) {
+      // Display the OSC message data
+      const messageElement = document.createElement('div');
+      messageElement.innerHTML = '<strong>' + oscMsg.address + '</strong> ' + oscMsg.args;
+      document.body.appendChild(messageElement);
+    });
+  </script>
+</head>
+<body>
+  <h1>OSC Message Display</h1>
+  <p>This page displays OSC messages received from a Node.js server.</p>
+</body>
+</html>

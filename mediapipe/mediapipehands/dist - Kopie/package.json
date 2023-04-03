@@ -2,7 +2,6 @@
 	"name": "osc-web",
 	"description": "OSC (Open Sound Control) Web Bridge",
 	"version": "0.2.1",
-	
 	"author": {
 		"name": "Vilson Vieira",
 		"email": "vilson@void.cc"

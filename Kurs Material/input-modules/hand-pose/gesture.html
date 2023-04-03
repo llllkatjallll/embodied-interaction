@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Input Module</title>
+    <meta charset="utf-8">
+  <link rel="icon" href="favicon.ico">
+
+  <!-- p5 -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> 
+
+  <!-- Mediapipe -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils_3d@0.3/control_utils_3d.css" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.6/control_utils.css" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="demo.css" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.6/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils_3d@0.3/control_utils_3d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4/hands.js" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+     <video class="input_video" style="display:none"></video> 
+    <canvas class="output_canvas" width="1280px" height="720px" ></canvas>
+    <div class="loading">
+      <div class="spinner"></div>
+      <div class="message">
+        Loading
+      </div>
+    </div>
+
+  <div class="control-panel">
+  </div>
+  <div class='square-box'>
+  <div class="landmark-grid-container">
+  </div>
+  </div> 
+  </div>
+
+
+<div id="p5sketch"></div>
+
+
+
+<script>
+  //Hier werden Variablen angelegt für Hand/Körper/Gesichts-Koordinaten, die wir später verwenden werden
+  let zeigefinger = [0,0];
+  let daumen = [0,0];
+</script>
+
+<script type="module" src="./script.js"></script>
+<script type="module" src="./sketch.js"></script>
+
+</body>
+</html>
