@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!162 &1
+EditorUserSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 4
+  m_ConfigSettings:
+    RecentlyUsedSceneGuid-0:
+      value: 5a5757560101590a5d0c0e24427b5d44434e4c7a7b7a23677f2b4565b7b5353a
+      flags: 0
+    RecentlyUsedSceneGuid-1:
+      value: 525456540102585a0b5e587313220a444f4e4b7e7e782069787d1f67b5b46239
+      flags: 0
+    RecentlyUsedSceneGuid-2:
+      value: 5602030754510f5d0f5b582641765c4414151a292f2b7f642e7a4961b0e3366f
+      flags: 0
+    RecentlyUsedSceneGuid-3:
+      value: 5504050352075d5859085b7143770b4415154d737c2d7e352c784e30bbe43539
+      flags: 0
+    RecentlyUsedSceneGuid-4:
+      value: 5353550453545c0f5e0a0f7112765c44154f4a7a2d7973317a7e4931e1b7673b
+      flags: 0
+    RecentlyUsedSceneGuid-5:
+      value: 05060551070c515d5f5f542316715c44474f487d2f7e7f3578781c30b4e66d6f
+      flags: 0
+    RecentlyUsedSceneGuid-6:
+      value: 01080004060c500a5c5e0f76467b5b4410154e727a7e72622c7d4e60b4b7626b
+      flags: 0
+    RecentlyUsedSceneGuid-7:
+      value: 575304070651590e585d552645730b44424e4f7f747c7633792d1c64bab6603a
+      flags: 0
+    UnityEditor.ShaderGraph.Blackboard:
+      value: 18135939215a0a5004000b0e15254b524c030a3f2964643d120d1230e9e93a3fd6e826abbd3c3e302a07a37e0901373ae01e0008f707250d171df81a53a5405d41895ac825e0100ec20313c0d91cddccd3d0c7efcca9bd80908fecb0f9cfddf1eff4e7a1b1eae482f0fdaee1e1928b86d888ed909c968797a7cf
+      flags: 0
+    UnityEditor.ShaderGraph.FloatingWindowsLayout2:
+      value: 181344140043005e1a220d3b1f364b524c0c5a27130c293326201334cee5322ca0bd30e8eb293a707b0fd0180b3d0a36fc0d3d04e649500d1002ee0b5dbd1d2c27c00ad113cb1e10e41f1addc80993b98d9884a69ae6d8f0d1cda9e8fbfefaf9f9dea3fdb9ade882f0f7b0e1e380cafbf2c3adc18e9cd285a2908b82ec879c84808fdc8e8ed0818980dbf8daf7dce5bdd1fbf5c4c1ebc1fbcdcecdea33e2ff35323130e2a1a5ab
+      flags: 0
+    UnityEditor.ShaderGraph.InspectorWindow:
+      value: 18135939215a0a5004000b0e15254b524c1119263f2d6a722016393ce1eb3d36e5d339f9a560393d3511ea7046333e09f7181d02f50a06241708ee0b05bd4a40438b40954a984d49924a4597994c85b38c9a96e7e7c3e8cad7c5affce0f1e2d7f3f7b6febeeaa691f8f6b0e7ff929794979be79799979c91e99e93de81e0dbc9dc94dfcd9b9f9a818addf0c3f2dce5bdd1fbf6c1c0ebc8f2c4c7c4e336ebf634333439a7a1
+      flags: 0
+    vcSharedLogLevel:
+      value: 0d5e400f0650
+      flags: 0
+  m_VCAutomaticAdd: 1
+  m_VCDebugCom: 0
+  m_VCDebugCmd: 0
+  m_VCDebugOut: 0
+  m_SemanticMergeMode: 2
+  m_DesiredImportWorkerCount: 4
+  m_StandbyImportWorkerCount: 2
+  m_IdleImportWorkerShutdownDelay: 60000
+  m_VCShowFailedCheckout: 1
+  m_VCOverwriteFailedCheckoutAssets: 1
+  m_VCProjectOverlayIcons: 1
+  m_VCHierarchyOverlayIcons: 1
+  m_VCOtherOverlayIcons: 1
+  m_VCAllowAsyncUpdate: 1
+  m_ArtifactGarbageCollection: 1

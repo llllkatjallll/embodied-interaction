@@ -1,0 +1,33 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "./node_modules/@needle-tools/engine"
+    },
+    {
+      "name": "embodiedinteractionnpm",
+      "path": "node_modules/embodiedinteractionnpm"
+    },
+    {
+      "name": "particlestestscripts",
+      "path": "node_modules/particlestestscripts"
+    },
+    {
+      "name": "samplescripts",
+      "path": "node_modules/samplescripts"
+    }
+  ],
+  "settings": {
+    "window.title": "CollaborativeSandbox",
+    "compile-hero.disable-compile-files-on-did-save-code": true,
+    "files.exclude": {
+      "package-lock.json": true,
+      "**/.git": true,
+      "**/.DS_Store": true,
+      "**/node_modules": true,
+      "**/*.meta": true
+    }
+  }
+}

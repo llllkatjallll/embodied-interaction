@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  <title>Made with Needle</title>
+  
+  <meta property="og:title" content="Made with Needle" />
+  <meta name="description" content="🌵 Made with Needle Engine">
+  <meta property="og:description" content="🌵 Made with Needle Engine" />
+  
+  <meta name="robots" content="index,follow">
+  <meta name="url" content="http://needle.tools">
+
+    <!-- p5 -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.js"></script> 
+
+  <!-- Mediapipe -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+
+
+
+  <link rel="stylesheet" href="./src/styles/style.css">
+</head>
+
+<body>
+  <script>
+    // hack for simple-peer
+    window.global = window;
+    var parcelRequire;
+  </script>
+  <script type="module" src="./src/generated/gen.js"></script>
+  <script type="module" src="./src/main.ts"></script>
+
+    <div class="container">
+    <video class="input_video" style="display: none;"></video>
+    <canvas class="output_canvas" style="display: none" width="640px" height="360px"></canvas>
+  </div>
+
+ 
+
+  <needle-engine></needle-engine>
+  <div id="p5sketch" ></div> 
+  <script>
+  //Hier werden Variablen angelegt für Hand/Körper/Gesichts-Koordinaten, die wir später verwenden werden
+  let ersteHandPositionen = [];
+  let zweiteHandPositionen  = [];
+
+</script>
+
+<script type="module" src="./mediapipe.js"></script>
+<script type="module" src="./sketch.js"></script>
+
+</body>
+</html>
