@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Webcam Example</title>
+  </head>
+  <body>
+    <h1>Webcam Example</h1>
+    <p>Select a webcam:</p>
+    <select id="cameraSelector"></select>
+    <br><br>
+    <video id="video" width="640" height="480" autoplay></video>
+    <script>
+      const video = document.querySelector('#video');
+      const cameraSelector = document.querySelector('#cameraSelector');
+
+      // Get the list of available cameras and populate the dropdown menu
+      navigator.mediaDevices.enumerateDevices().then((devices) => {
+        let cameras = devices.filter((device) => device.kind === 'videoinput');
+        
+
+        const constraints = {
+          video: {
+            deviceId: { exact: cameras[0].deviceId },
+            width: { ideal: 640 },
+            height: { ideal: 480 }
+          }
+        };
+       
+        navigator.mediaDevices.getUserMedia(constraints)
+          .then((stream) => {
+            video.srcObject = stream;
+          })
+          .catch((error) => {
+            console.error(`Error accessing camera: ${error}`);
+          });
+
+      });
+
+      // Start streaming the selected camera when an option is chosen
+      cameraSelector.addEventListener('change', (event) => {
+       
+      });
+    </script>
+  </body>
+</html>

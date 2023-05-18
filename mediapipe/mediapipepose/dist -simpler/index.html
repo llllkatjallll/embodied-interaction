@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title> MediaPipe - Pose</title>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils_3d@0.2/landmark_grid.css" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.6/control_utils.css" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="demo.css" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3/camera_utils.js"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils_3d@0.2/control_utils_3d.js"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.6/control_utils.js"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3/drawing_utils.js"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.4/pose.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./style.css">
+
+    <!-- p5 -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> 
+
+</head>
+
+<body>
+  
+
+  <body>
+
+    <div class="container">
+      <video class="input_video"></video>
+      <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+      <div class="loading">
+        <div class="spinner"></div>
+        <div class="message">
+          Loading
+        </div>
+      </div>
+
+      <div class="control-panel">
+      </div>
+      <div class='square-box'>
+        <div class="landmark-grid-container">
+        </div>
+      </div>
+
+      <div id="p5sketch"></div>
+
+      <script>
+        //Hier werden Variablen angelegt für Hand/Körper/Gesichts-Koordinaten, die wir später verwenden werden
+        let handLinks = [0, 0];
+        let handRechts = [0, 0];
+        let schulterRechts = [0, 0];
+        let schulterLinks = [0, 0];
+
+        let bodyPositionen = [];
+      </script>
+
+      <script type="module" src="./script.js"></script>
+      <script type="module" src="./sketch.js"></script>
+
+  </body>
+
+</html>
