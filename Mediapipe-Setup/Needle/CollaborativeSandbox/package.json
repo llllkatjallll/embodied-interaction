@@ -10,9 +10,7 @@
   "dependencies": {
 	  "@needle-tools/engine": "^3.5.9-alpha.1",
 	  "three": "npm:@needle-tools/three@0.146.8",
-	  "embodiedinteractionnpm": "file:./../../Assets/Needle/EmbodiedInteractionNPM~",
-	  "particlestestscripts": "file:./../../Library/PackageCache/com.needle.engine-samples@0.7.0/Runtime/Particles/ParticlesTestScripts~",
-	  "samplescripts": "file:./../../Library/PackageCache/com.needle.engine-samples@0.7.0/Runtime/_Shared/SampleScripts~"
+	  "embodiedinteractionnpm": "file:./../../Assets/Needle/EmbodiedInteractionNPM~"
 	},
   "devDependencies": {
 	  "@needle-tools/helper": "^0.7.4",

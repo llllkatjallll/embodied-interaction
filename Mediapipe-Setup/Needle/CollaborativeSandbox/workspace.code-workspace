@@ -9,14 +9,6 @@
     {
       "name": "embodiedinteractionnpm",
       "path": "node_modules/embodiedinteractionnpm"
-    },
-    {
-      "name": "particlestestscripts",
-      "path": "node_modules/particlestestscripts"
-    },
-    {
-      "name": "samplescripts",
-      "path": "node_modules/samplescripts"
     }
   ],
   "settings": {

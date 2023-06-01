@@ -1,7 +1,7 @@
 ﻿import { TypeStore } from "@needle-tools/engine"
 
 // Import types
-import { MoveObject } from "../MoveObject";
+import { ParticleSphere } from "../ParticleSphere";
 
 // Register types
-TypeStore.add("MoveObject", MoveObject);
+TypeStore.add("ParticleSphere", ParticleSphere);
