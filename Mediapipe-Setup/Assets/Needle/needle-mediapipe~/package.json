@@ -1,5 +1,5 @@
 {
-  "name": "embodiedinteractionnpm",
+  "name": "@needle-tools/mediapipe-sample",
   "version": "1.0.0",
   "main": "index.ts",
   "dependencies": {
@@ -11,8 +11,8 @@
     "three": "npm:@needle-tools/three@0.146.8"
   },
   "devDependencies": {
-    "@needle-tools/engine": "^3.5.9-alpha.1",
-    "@types/three": "0.146.0",
-    "three": "npm:@needle-tools/three@0.146.8"
-  }
+	  "@needle-tools/engine": "^3.5.13-beta",
+	  "@types/three": "0.146.0",
+	  "three": "npm:@needle-tools/three@0.146.8"
+	}
 }

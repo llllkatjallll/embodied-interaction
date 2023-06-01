@@ -10,7 +10,7 @@
   "dependencies": {
 	  "@needle-tools/engine": "^3.5.13-beta",
 	  "three": "npm:@needle-tools/three@0.146.8",
-	  "embodiedinteractionnpm": "file:./../../Assets/Needle/EmbodiedInteractionNPM~"
+	  "@needle-tools/mediapipe-sample": "file:../../Assets/Needle/needle-mediapipe~"
 	},
   "devDependencies": {
 	  "@needle-tools/helper": "^0.7.4",
