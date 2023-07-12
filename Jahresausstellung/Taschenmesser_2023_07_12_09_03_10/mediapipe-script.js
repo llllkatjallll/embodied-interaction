@@ -4,7 +4,6 @@ const canvasCtx = canvasElement.getContext('2d');
 
 function onResults(bodyLandmarks) {
     bodyPositionen = bodyLandmarks.poseLandmarks;
-console.log(bodyPositionen);
     /*if (results.multiHandLandmarks && results.multiHandedness) {
       for (let index = 0; index < results.multiHandLandmarks.length; index++) {
           handPositionen = results.multiHandLandmarks[0];
