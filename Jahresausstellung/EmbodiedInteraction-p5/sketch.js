@@ -4,9 +4,9 @@ let sketch = function (p) {
   let canvas;
   let width = 0;
   let height = 0;
-  let currentSketch = 2;
+  let currentSketch = 1;
   let timerStart = 0; //variable to hold the start time of each iteration of the timer
-  let timerLength = 15000; //length of the timer (in milliseconds)
+  let timerLength = 20000; //length of the timer (in milliseconds)
   let timerCount = 0; //number of times the timer has reset
 
 
@@ -61,7 +61,7 @@ let sketch = function (p) {
   let ratio;
 
   let easing = 0.05;
-  let easingBild = 0.3;
+  let easingBild = 0.1;
 
 
   // RAIN /////////////////////////
@@ -204,7 +204,7 @@ let sketch = function (p) {
   }
 
   let ratavaSetupActive = false;
-
+  let fligolinSetupActive = false;
 
   p.draw = function () {
 
@@ -212,7 +212,7 @@ let sketch = function (p) {
       timerCount++; //increment the number of times the timer has reset
       console.log(timerCount); //print number of timer resets to console
 
-      if (currentSketch < 3) {
+      if (currentSketch < 1) {
         currentSketch = currentSketch + 1;
       } else {
         currentSketch = 0;
@@ -228,7 +228,13 @@ let sketch = function (p) {
     }
 
     if (currentSketch == 1) {
+      if (!fligolinSetupActive) {
+        p.fligolinSetup();
+        
+      }
       p.fligolinDraw();
+    } else {
+      fligolinSetupActive = false;
     }
 
     if (currentSketch == 3) {
@@ -242,6 +248,15 @@ let sketch = function (p) {
       p.ratavaDraw();
     }
 
+  }
+
+  p.fligolinSetup = function () {
+    bildY = -(10000 * ratio) / 2 + height;
+    bildYsmooth = -(10000 * ratio) / 2 + height;
+    fligolinSetupActive = true;
+    zielErreicht = false;
+    console.log("zielErreicht", zielErreicht);
+    console.log("fligolinSetupActive", fligolinSetupActive);
   }
 
   p.ratavaDraw = function () {
@@ -601,7 +616,6 @@ let sketch = function (p) {
       p.punkteZeichnen();
       p.abstandBerechnen();
       p.bildZwischenPunkten();
-      // p.bildZeichnen();
       p.geschwindigkeitBerechnen();
     }
   }
@@ -675,7 +689,7 @@ let sketch = function (p) {
           p.push();
           p.translate(mittelpunkt.x, mittelpunkt.y);
           p.rotate(neigungswinkel);
-          p.image(bild, 0, 0, breiteZuhoehe * distanz, distanz);
+          p.image(bild, 0, 0, breiteZuhoehe * distanz*1.4, distanz*1.4);
           p.pop();
 
         } else {
@@ -691,11 +705,11 @@ let sketch = function (p) {
           p.push();
           p.translate(mittelpunkt.x, mittelpunkt.y);
           p.rotate(neigungswinkel);
-          p.image(bild, 0, 0, breiteZuhoehe * distanz, distanz);
+          p.image(bild, 0, 0, breiteZuhoehe * distanz*1.4, distanz*1.4);
           p.pop();
         }
       } else {
-        bildY = bildY + 60;
+        bildY = bildY + 120;
         aktuellesBild = p.frameCount % 3;
 
         let breiteZuhoehe = bild.width / bild.height;
@@ -705,7 +719,7 @@ let sketch = function (p) {
         p.push();
         p.translate(mittelpunkt.x, mittelpunkt.y);
         p.rotate(neigungswinkel);
-        p.image(imgs[aktuellesBild], 0, 0, breiteZuhoehe * distanz, distanz);
+        p.image(imgs[aktuellesBild], 0, 0, breiteZuhoehe * distanz*1.4, distanz*1.4);
         p.pop();
       }
     } else {
@@ -720,7 +734,7 @@ let sketch = function (p) {
       p.push();
       p.translate(mittelpunkt.x, mittelpunkt.y);
       p.rotate(neigungswinkel);
-      p.image(imgs[aktuellesBild], 0, 0, breiteZuhoehe * distanz, distanz);
+      p.image(imgs[aktuellesBild], 0, 0, breiteZuhoehe * distanz*1.4, distanz*1.4);
       p.pop();
 
 
@@ -742,11 +756,13 @@ let sketch = function (p) {
   // FLIGOLIN END
 
   p.mousePressed = function () {
-    if (currentSketch < 3) {
+
+    //p.fligolinSetup();
+/*     if (currentSketch < 3) {
       currentSketch = currentSketch + 1;
     } else {
       currentSketch = 0;
-    }
+    } */
 
   }
 
@@ -778,7 +794,7 @@ let sketch = function (p) {
       p.imageMode(p.CORNER);
 
       p.push(); // ab hier wird rotiert
-      p.translate(width / 2 + 50, 200);
+      p.translate(width / 2 + 50, height*0.35);
       p.rotate(p.radians(gabelrotation)); // rotieren um 20 Grad
       p.image(objekt1, 0, 0, 45, 250); // Gabel
       p.pop(); // rotieren beenden
@@ -791,19 +807,19 @@ let sketch = function (p) {
       //flutschfinger 
       p.imageMode(p.CORNER);
       p.push(); // ab hier wird rotiert
-      p.translate(width / 2 + 50, 220);
+      p.translate(width / 2 + 50, height*0.34);
       p.rotate(p.radians(fingerrotation)); // rotieren um 20 Grad
       p.image(finger, 0, 0, 90, 250); // Größe vom Finger
       p.pop(); // rotieren beenden
 
 
-      let kenrotation = p.map(punktC.x, width / 2, width, 0, -90);
+      let kenrotation = p.map(punktC.x, width / 2, width, 0, -140);
 
       //ken
       p.imageMode(p.CORNER);
 
       p.push(); // ab hier wird rotiert
-      p.translate(width / 2 + 15, 380);
+      p.translate(width / 2 + 15, height*0.45);
       p.rotate(p.radians(kenrotation)); // rotieren um 20 Grad
       p.image(ken, 0, 0, 120, 250); // Gabel
       p.pop(); // rotieren beenden
@@ -815,7 +831,7 @@ let sketch = function (p) {
       p.imageMode(p.CORNER);
 
       p.push(); // ab hier wird rotiert
-      p.translate(width / 2 + 50, 400);
+      p.translate(width / 2 + 50, height*0.55);
       p.rotate(p.radians(zigarettenrotation)); // rotieren um 20 Grad
       p.image(zigarette, 0, 0, 200, 80); // zigarette
 
